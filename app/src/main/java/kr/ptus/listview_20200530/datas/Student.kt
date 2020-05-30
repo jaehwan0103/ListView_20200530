@@ -1,8 +1,8 @@
 package kr.ptus.listview_20200530.datas
 
-class Student {
+class Student(inputName: String, iby : Int, gender: Boolean) {
 
-    val name = "미입력"
+    val name = inputName
     val birthYear = 0
     val isMale = true
 
