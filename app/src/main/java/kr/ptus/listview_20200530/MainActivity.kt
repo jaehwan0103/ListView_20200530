@@ -2,6 +2,8 @@ package kr.ptus.listview_20200530
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.ptus.listview_20200530.adapters.StudentsAdapter
 import kr.ptus.listview_20200530.datas.Student
@@ -30,6 +32,11 @@ class MainActivity : AppCompatActivity() {
         studentsListView.adapter = studentAdapter
 
         studentsListView.setOnItemClickListener { parent, view, position, id ->
+            Log.d("리스트뷰아이템클릭", "${position}번줄 클릭")
+
+            val clickedStudent = students.get(position)
+
+            Toast.makeText(this, clickedStudent.name, Toast.LENGTH_SHORT)
 
         }
 
