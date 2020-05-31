@@ -16,18 +16,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        students.add(Student("조경진", 1988, gender = true))
-        students.add(Student("김광철", 1966, gender = true))
-        students.add(Student("김재환", 1993, gender = true))
-        students.add(Student("박수정", 1994, gender = false))
-        students.add(Student("신용석", 1988, gender = true))
-        students.add(Student("엄곤지", 1984, gender = false))
-        students.add(Student("이승원", 1978, gender = true))
-        students.add(Student("이현호", 1981, gender = true))
+        students.add(Student("조경진", 1988, true))
+        students.add(Student("김광철", 1966, true))
+        students.add(Student("김재환", 1993, true))
+        students.add(Student("박수정", 1994, false))
+        students.add(Student("신용석", 1988, true))
+        students.add(Student("엄곤지", 1984, false))
+        students.add(Student("이승원", 1978, true))
+        students.add(Student("이현호", 1981, true))
 
         studentAdapter = StudentsAdapter(this, R.layout.students_list_item, students)
 
         studentsListView.adapter = studentAdapter
+
+        studentsListView.setOnItemClickListener { parent, view, position, id ->
+
+        }
 
     }
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import kr.ptus.listview_20200530.R
 import kr.ptus.listview_20200530.datas.Student
 import java.util.ArrayList
@@ -24,6 +25,22 @@ class StudentsAdapter(context: Context, resId: Int, list: List<Student>) :
         }
 
         val row = tempRow!!
+
+        val data = mList.get(position)
+        val nameAndAgeTxt = row.findViewById<TextView>(R.id.nameAndAgeTxt)
+        val genderTxt = row.findViewById<TextView>(R.id.genderTxt)
+
+        nameAndAgeTxt.text = "${data.name}(${data.getKoreanAge(2020)}세)"
+
+        if (data.isMale){
+
+            genderTxt.text = "남성 수강생"
+
+        }
+
+        else {
+            genderTxt.text = "여성 수강생"
+        }
 
         return row
 
