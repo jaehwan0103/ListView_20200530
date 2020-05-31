@@ -16,10 +16,9 @@ class ViewStudentActivity : AppCompatActivity() {
         nameTxt.text = student.name
         ageTxt.text = "${student.getKoreanAge(2020)}세 (${student.birthYear})"
 
-        if (student.isMale){
+        if (student.isMale) {
             genederTxt.text = "남성"
-        }
-        else{
+        } else {
             genederTxt.text = "여성"
         }
 

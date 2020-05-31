@@ -43,5 +43,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        studentsListView.setOnItemLongClickListener { parent, view, position, id ->
+            Toast.makeText(this,"${position}번 줄 롱클릭",Toast.LENGTH_SHORT).show()
+
+            return@setOnItemLongClickListener true
+        }
+
     }
 }
