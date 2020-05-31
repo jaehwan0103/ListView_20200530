@@ -1,6 +1,8 @@
 package kr.ptus.listview_20200530.datas
 
-class Student(inputName: String, iby : Int, gender: Boolean) {
+import java.io.Serializable
+
+class Student(inputName: String, iby : Int, gender: Boolean) : Serializable {
 
     val name = inputName
     val birthYear = iby

@@ -1,5 +1,6 @@
 package kr.ptus.listview_20200530
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -36,7 +37,9 @@ class MainActivity : AppCompatActivity() {
 
             val clickedStudent = students.get(position)
 
-            Toast.makeText(this, clickedStudent.name, Toast.LENGTH_SHORT)
+            val myIntent = Intent(this, ViewStudentActivity::class.java)
+            myIntent.putExtra("student", clickedStudent)
+            startActivity(myIntent)
 
         }
 
