@@ -1,10 +1,12 @@
 package kr.ptus.listview_20200530
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.ptus.listview_20200530.adapters.StudentsAdapter
 import kr.ptus.listview_20200530.datas.Student
@@ -13,7 +15,7 @@ import java.util.ArrayList
 class MainActivity : AppCompatActivity() {
 
     val students = ArrayList<Student>()
-    lateinit var studentAdapter : StudentsAdapter
+    lateinit var studentAdapter: StudentsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +48,18 @@ class MainActivity : AppCompatActivity() {
         studentsListView.setOnItemLongClickListener { parent, view, position, id ->
 //            Toast.makeText(this,"${position}번 줄 롱클릭",Toast.LENGTH_SHORT).show()
 
-            students.removeAt(position)
-            studentAdapter.notifyDataSetChanged()
+            val alert = AlertDialog.Builder(this)
+            alert.setTitle("수강생 삭제")
+            alert.setMessage("정말 이 수강생을 삭제 하시겟습니까?")
+            alert.setPositiveButton("확인", DialogInterface.OnClickListener { dialog, which ->
+
+                students.removeAt(position)
+                studentAdapter.notifyDataSetChanged()
+
+            })
+            alert.setNegativeButton("취소", null)
+            alert.show()
+
 
             return@setOnItemLongClickListener true
         }
