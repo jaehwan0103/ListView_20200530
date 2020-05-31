@@ -14,6 +14,7 @@
         android:text="이름"/>
 
     <TextView
+        android:id="@+id/nameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -29,6 +30,7 @@
         android:layout_marginTop="15dp"/>
 
     <TextView
+        android:id="@+id/ageTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
@@ -43,6 +45,7 @@
         android:layout_marginTop="15dp"/>
 
     <TextView
+        android:id="@+id/genederTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
